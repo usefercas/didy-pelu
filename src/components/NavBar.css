@@ -1,0 +1,47 @@
+/* Navbar.css */
+.main-head {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .main-head.slidedown {
+    background-color: #333; /* Cambiar el color del fondo cuando se hace scroll */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-list-item {
+    display: inline-block;
+  }
+  
+  .nav-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: #f1f1f1;
+  }
+  

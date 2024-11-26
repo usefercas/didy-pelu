@@ -1,0 +1,128 @@
+.services-container {
+    display: flex;
+    flex-direction: column; /* Organiza los títulos y servicios de manera vertical */
+    align-items: center; /* Centra todo el contenido */
+    gap: 40px; /* Espacio entre el encabezado y los servicios */
+    margin-top: 40px;
+}
+
+/* Encabezado de la sección (Servicios) */
+.services-header {
+    text-align: center;
+    width: 100%;
+}
+
+/* Título "Servicios" */
+.services-title {
+    font-size: 3rem;
+    color: #33d1cc; /* Azul celeste */
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Subtítulo "Algunos de nuestros servicios" */
+.services-subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Contenedor de los items de servicio (para que no se desborden) */
+.services-items-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
+    gap: 20px;
+    width: 100%; /* Asegura que los servicios se ajusten al contenedor */
+}
+
+/* Cada item de servicio */
+.service-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; /* Alineamos todo hacia el principio (arriba) */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Efecto hover */
+}
+
+/* Imagen de cada servicio */
+.service-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Descripción del servicio */
+.service-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.service-description h2 {
+    font-size: 1.8rem;
+    color: #33d1cc;
+    margin-bottom: 10px;
+}
+
+.service-description .price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-description p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .services-items-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .service-item {
+        flex-direction: column; /* Apilar imagen y descripción */
+        text-align: center;
+    }
+
+    .service-image {
+        margin-bottom: 15px;
+        width: 150px; /* Aumentar tamaño de la imagen en pantallas pequeñas */
+        height: 150px;
+    }
+
+    .service-description h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-description p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-title {
+        font-size: 2.5rem; /* Hacer título más pequeño en pantallas muy pequeñas */
+    }
+
+    .services-subtitle {
+        font-size: 1.2rem; /* Ajustar subtítulo */
+    }
+
+    .service-item {
+        padding: 10px;
+    } }

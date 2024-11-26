@@ -1,0 +1,61 @@
+.footer-container {
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center; /* Centrar los elementos */
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-info {
+    text-align: center; /* Centrar el texto */
+    margin-right: 20px; /* Espaciado entre el texto y el logo */
+  }
+  
+  .footer-info h4 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+  }
+  
+  .footer-info hr {
+    border: 0;
+    border-top: 1px solid #fff;
+    margin: 10px 0;
+  }
+  
+  .footer-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar el logo */
+  }
+  
+  .instagram-logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+    margin-left: 10px; /* Separar ligeramente el logo del texto */
+  }
+  
+  .instagram-logo:hover {
+    transform: scale(1.1); /* Efecto hover en el logo */
+  }
+  
+  .footer-instagram a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .footer-instagram a:hover {
+    color: #fff;
+  }
+  

@@ -1,0 +1,132 @@
+modelo-container {
+    display: flex;
+    justify-content: flex-start; /* Imagen y contenido alineados */
+    align-items: center;
+    width: 100%;
+    height: auto; /* Ajuste automático de altura */
+    position: relative;
+    margin-top: 0; /* Sin separación con el navbar */
+    padding: 0;
+}
+
+/* Imagen */
+.modelo-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Limita la altura máxima */
+    object-fit: cover; /* Mantiene proporciones */
+}
+
+/* Contenedor del texto */
+.modelo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Cambia al lado izquierdo */
+    color: #fff;
+    padding-left: 30px; /* Espaciado desde la izquierda */
+    position: absolute;
+    left: 0; /* Posición al lado izquierdo */
+    width: 50%;
+    background-color: transparent; /* Sin fondo */
+}
+
+/* Título principal */
+.texto-principal {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #33d1cc;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Subtítulo */
+.texto-secundario {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Descripción */
+.texto-parrafo {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Botón */
+.modelo-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #33d1cc;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modelo-btn:hover {
+    background-color: #29b4b0;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .modelo-container {
+        flex-direction: column; /* Apila imagen y contenido */
+        height: auto;
+    }
+
+    .modelo-img {
+        width: 100%;
+        max-height: 50vh; /* Imagen más pequeña en móviles */
+    }
+
+    .modelo-content {
+        align-items: center; /* Centra el contenido */
+        padding: 20px;
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center; /* Centra el texto */
+        position: relative; /* Evita solapamientos */
+    }
+
+    .texto-principal {
+        font-size: 2.5rem; /* Texto más pequeño */
+    }
+
+    .texto-secundario {
+        font-size: 1.8rem;
+    }
+
+    .modelo-btn {
+        width: 100%; /* Botón más ancho */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modelo-img {
+        max-height: 40vh; /* Ajuste adicional para pantallas pequeñas */
+    }
+
+    .texto-principal {
+        font-size: 2rem;
+    }
+
+    .texto-secundario {
+        font-size: 1.5rem;
+    }
+
+    .texto-parrafo {
+        font-size: 1rem;
+    }
+
+    .modelo-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
