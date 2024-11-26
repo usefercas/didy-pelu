@@ -13,7 +13,7 @@ const Servicio = () => {
       {/* Contenedor de los items de servicio */}
       <div className="services-items-container">
         <div className="service-item">
-          <img src="/public/corte.png" alt="Corte de Pelo" className="service-image" />
+          <img src="/public/corte1.png" alt="Corte de Pelo" className="service-image" />
           <div className="service-description">
             <h2>CORTE DE PELO</h2>
             <p className="price">20€</p>
@@ -22,7 +22,7 @@ const Servicio = () => {
           </div>
         </div>
         <div className="service-item">
-          <img src="/public/arreglo.png" alt="Arreglo de barba" className="service-image" />
+          <img src="/public/arreglo1.png" alt="Arreglo de barba" className="service-image" />
           <div className="service-description">
             <h2>ARREGLO DE BARBA</h2>
             <p className="price">18€</p>
@@ -31,7 +31,7 @@ const Servicio = () => {
           </div>
         </div>
         <div className="service-item">
-          <img src="/public/afeitado.png" alt="Afeitado de barba" className="service-image" />
+          <img src="/public/afeitado1.png" alt="Afeitado de barba" className="service-image" />
           <div className="service-description">
             <h2>AFEITADO DE BARBA</h2>
             <p className="price">20€</p>
@@ -40,7 +40,7 @@ const Servicio = () => {
           </div>
         </div>
         <div className="service-item">
-          <img src="/public/tinte.png" alt="Color de barba" className="service-image" />
+          <img src="/public/tinte1.png" alt="Color de barba" className="service-image" />
           <div className="service-description">
             <h2>COLOR DE BARBA</h2>
             <p className="price">16€</p>
