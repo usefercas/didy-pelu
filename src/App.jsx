@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import NavBar from "./components/NavBar"; // Asegúrate de que el archivo sea correcto
-
+import NavBar from "./components/NavBar"; // Asegúrate de que el archivo sea el correcto
 import Item from "./components/Item";
 import Modelo from "./components/Modelo";
 import Servicios from "./components/Servicios";
@@ -10,6 +9,7 @@ import Footer from "./components/Footer";
 function App() {
   const contactoRef = useRef(null);  // Referencia para la sección de contacto
   const serviciosRef = useRef(null);  // Nueva referencia para la sección de servicios
+  const galeriaRef = useRef(null);    // Nueva referencia para la sección de galería
 
   // Función para hacer scroll a la sección de contacto
   const scrollToContacto = () => {
@@ -21,24 +21,33 @@ function App() {
     serviciosRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Función para hacer scroll a la sección de galería
+  const scrollToGaleria = () => {
+    galeriaRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div>
       <NavBar 
         scrollToServicios={scrollToServicios} 
         scrollToContacto={scrollToContacto} 
+        scrollToGaleria={scrollToGaleria}  // Pasamos la función de galería
       /> {/* Pasamos las funciones al Navbar */}
+      
       <Modelo scrollToContacto={scrollToContacto} />
       <Item />
       
       <div ref={serviciosRef}>
         <Servicios />
       </div>
-      <Galeria/>
+
+      <div ref={galeriaRef}> {/* Aquí se encuentra la referencia para la galería */}
+        <Galeria />
+      </div>
 
       <div ref={contactoRef}>
-      
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

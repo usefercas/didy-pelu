@@ -1,74 +1,123 @@
 .galeria-container {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Encabezado de la galería */
+.header {
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), /* Degradado oscuro */
+    url('/use.png'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Altura del encabezado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Texto en blanco */
+}
+
+.header-icon {
+  width: 50px; /* Ajusta el tamaño del ícono */
+  height: 50px; /* Ajusta el tamaño del ícono */
+  margin-bottom: 10px; /* Espaciado entre el ícono y el texto */
+}
+
+.header h2,
+.header h3 {
+  margin: 0;
+  padding: 5px;
+}
+
+/* Contenedor de la galería */
+.grid {
+  background-color: black; /* Fondo negro para la galería */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste automático */
+  gap: 20px;
+}
+
+/* Estilo para las imágenes */
+.image-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.image:hover {
+  transform: scale(1.05); /* Efecto hover */
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
   .header {
-    background-image: 
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), /* Degradado oscuro */
-      url('/back.png'); /* Imagen de fondo */
-    background-size: cover;
-    background-position: center;
-    height: 300px; /* Altura del encabezado */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Texto en blanco */
+    height: 250px; /* Ajusta la altura del encabezado */
   }
-  
-  .header-icon {
-    width: 50px; /* Ajusta el tamaño del ícono */
-    height: 50px; /* Ajusta el tamaño del ícono */
-    margin-bottom: 10px; /* Espaciado entre el ícono y el texto */
+
+  .header h2 {
+    font-size: 1.8rem; /* Reduce el tamaño del título */
   }
-  
-  .header h2,
+
   .header h3 {
-    margin: 0;
-    padding: 5px;
+    font-size: 1.2rem; /* Reduce el tamaño del subtítulo */
   }
-  
+
   .grid {
-    background-color: black; /* Fondo negro para la galería */
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    padding: 10px;
+    gap: 15px; /* Espaciado reducido */
   }
-  
-  .image-wrapper {
-    position: relative;
-    cursor: pointer;
-  }
-  
+
   .image {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    border-radius: 6px;
   }
-  
-  .image:hover {
-    transform: scale(1.05);
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 200px; /* Ajusta la altura del encabezado */
   }
-  
-  .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+
+  .header h2 {
+    font-size: 1.5rem; /* Más pequeño para pantallas pequeñas */
   }
-  
-  .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
+
+  .header h3 {
+    font-size: 1rem; /* Más pequeño para pantallas pequeñas */
   }
-  
+
+  .grid {
+    gap: 10px; /* Reduce el espacio entre elementos */
+  }
+
+  .image {
+    border-radius: 4px;
+  }
+}

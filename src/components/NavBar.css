@@ -1,47 +1,146 @@
-/* Navbar.css */
+/* Estilos generales del Navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  z-index: 1;
+}
+
 .main-head {
-    position: fixed;
-    top: 0;
+  width: 100%;
+  height: 54px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent; /* Fondo transparente al inicio */
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.main-head.slidedown {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro, 70% de opacidad */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.main-head .main-menu {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Agregado para espaciado en los laterales */
+}
+
+.main-head .main-menu .logo {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo-img {
+  height: 40px; /* Ajusta el tamaño del logo */
+  width: auto; /* Mantiene la proporción */
+}
+
+.main-head .main-menu .nav-menu {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-head .main-menu .nav-menu .nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-head .main-menu .nav-menu .nav-list .nav-list-item {
+  padding: 15px 30px;
+  list-style: none;
+}
+
+.main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff; /* Texto blanco */
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: transparent; /* Sin fondo */
+  border: none; /* Sin borde */
+}
+
+.main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link:hover {
+  color: #33d1cc; /* Azul celeste en hover */
+}
+
+/* Menú hamburguesa: escondemos el menú en pantallas pequeñas */
+.main-head .main-menu .toggle-btn {
+  display: none;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+  /* Hacer que el menú sea vertical en pantallas pequeñas */
+  .main-head .main-menu .nav-menu .nav-list {
+    display: none; /* Esconde el menú por defecto en dispositivos móviles */
+    flex-direction: column;
     width: 100%;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para el menú */
+    position: absolute;
+    top: 54px; /* Justo debajo de la barra de navegación */
+    left: 0;
+    z-index: 999;
   }
-  
-  .main-head.slidedown {
-    background-color: #333; /* Cambiar el color del fondo cuando se hace scroll */
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-  }
-  
-  .main-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-menu ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-list-item {
-    display: inline-block;
-  }
-  
-  .nav-link {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
+
+  /* Mostrar el icono del menú hamburguesa */
+  .main-head .main-menu .toggle-btn {
+    display: block;
+    font-size: 30px;
+    color: #fff;
     cursor: pointer;
   }
-  
-  .nav-link:hover {
-    color: #f1f1f1;
+
+  /* Mostrar el menú cuando se hace clic en el icono del menú hamburguesa */
+  .main-head.active .nav-menu {
+    display: flex;
   }
-  
+
+  /* Estilo para los enlaces en dispositivos móviles */
+  .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Estilo para los enlaces en dispositivos móviles */
+  .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+    color: #fff;
+    font-size: 20px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hover efecto en móviles */
+  .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link:hover {
+    color: #33d1cc; /* Azul celeste en hover */
+  }
+
+  /* Mostrar el menú cuando el estado 'menuOpen' es true */
+  .nav-menu.show {
+    display: flex; /* Muestra el menú cuando se ha activado */
+  }
+}

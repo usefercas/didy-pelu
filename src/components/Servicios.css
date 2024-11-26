@@ -1,9 +1,12 @@
+/* Contenedor principal */
 .services-container {
     display: flex;
     flex-direction: column; /* Organiza los títulos y servicios de manera vertical */
     align-items: center; /* Centra todo el contenido */
     gap: 40px; /* Espacio entre el encabezado y los servicios */
     margin-top: 40px;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
 }
 
 /* Encabezado de la sección (Servicios) */
@@ -24,12 +27,12 @@
 /* Subtítulo "Algunos de nuestros servicios" */
 .services-subtitle {
     font-size: 1.5rem;
-    color: #333;
+    color: #000; /* Texto negro */
     margin-top: 10px;
     font-weight: 400;
 }
 
-/* Contenedor de los items de servicio (para que no se desborden) */
+/* Contenedor de los items de servicio */
 .services-items-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
@@ -71,20 +74,20 @@
 
 .service-description h2 {
     font-size: 1.8rem;
-    color: #33d1cc;
+    color: #33d1cc; /* Azul celeste */
     margin-bottom: 10px;
 }
 
 .service-description .price {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #333;
+    color: #333; /* Gris oscuro */
     margin-bottom: 10px;
 }
 
 .service-description p {
     font-size: 1.1rem;
-    color: #333;
+    color: #333; /* Gris oscuro */
     line-height: 1.6;
 }
 
@@ -125,4 +128,5 @@
 
     .service-item {
         padding: 10px;
-    } }
+    }
+}

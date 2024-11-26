@@ -13,7 +13,7 @@ const Servicio = () => {
       {/* Contenedor de los items de servicio */}
       <div className="services-items-container">
         <div className="service-item">
-          <img src="/public/corte5.png" alt="Corte de Pelo" className="service-image" />
+          <img src="/public/corte.png" alt="Corte de Pelo" className="service-image" />
           <div className="service-description">
             <h2>CORTE DE PELO</h2>
             <p className="price">20€</p>
@@ -40,7 +40,7 @@ const Servicio = () => {
           </div>
         </div>
         <div className="service-item">
-          <img src="/public/tinte2.png" alt="Color de barba" className="service-image" />
+          <img src="/public/tinte.png" alt="Color de barba" className="service-image" />
           <div className="service-description">
             <h2>COLOR DE BARBA</h2>
             <p className="price">16€</p>

@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         <div className="footer-instagram">
           <a href="https://instagram.com/clarityods" target="_blank" rel="noopener noreferrer">
-            <img src="/instagram.png" alt="Instagram" className="instagram-logo" />
+            <img src="insta3.png" alt="Instagram" className="instagram-logo" />
           </a>
         </div>
       </div>

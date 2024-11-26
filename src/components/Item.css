@@ -1,114 +1,114 @@
 /* Contenedor principal */
 .item-container {
-    background-image: url("/item.png"); /* Imagen de fondo */
-    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
-    background-position: center; /* Centra la imagen */
-    display: flex; /* Configura como contenedor flex */
-    justify-content: flex-start; /* Alinea el contenido a la izquierda */
-    align-items: flex-start; /* Alinea el contenido al principio */
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    height: auto; /* Ajusta la altura de manera automática */
-    min-height: 60vh; /* Mantén la altura mínima al 60% de la ventana */
-    position: relative; /* Necesario para pseudo-elementos */
-    margin: 0; /* Sin márgenes adicionales */
+    background-image: url("/item.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100vw;
+    height: auto;
+    min-height: 60vh; /* Deja un mínimo de 60% en pantallas grandes */
+    position: relative;
+    margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita que el contenido se desborde */
+    overflow: hidden;
 }
 
-/* Pseudo-elemento para degradar la imagen más intensamente */
+/* Pseudo-elemento para el degradado */
 .item-container::after {
-    content: ""; /* Elemento vacío para el degradado */
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0)); /* Degradado más intenso */
-    pointer-events: none; /* Permite interactuar con el contenido debajo */
-    z-index: 1; /* Asegura que el degradado esté encima de la imagen */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Contenedor del texto */
 .text-container {
-    position: absolute; /* Se coloca sobre la imagen */
-    top: 0; /* Desde el top */
-    left: 0; /* Desde el lado izquierdo */
-    width: 60%; /* Ocupa el 60% de la pantalla */
-    height: auto; /* Ajusta la altura según el contenido */
-    padding: 30px; /* Más espaciado interno para evitar que el texto esté pegado */
-    color: white; /* Color de texto predeterminado */
-    display: flex; /* Usamos flexbox para alinear el texto */
-    flex-direction: column; /* Coloca el texto en columnas */
-    justify-content: flex-start; /* Centra el texto verticalmente */
-    align-items: flex-start; /* Alinea todo el contenido a la izquierda */
-    z-index: 2; /* Asegura que el texto esté por encima del degradado */
-    text-align: left; /* Alinea el texto a la izquierda */
-    max-height: 100%; /* Asegura que no se desborde verticalmente */
-    box-sizing: border-box; /* Considera el padding al calcular el tamaño */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    text-align: left;
+    max-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* Fondo semitransparente para el texto */
 .text-container::before {
-    content: ""; /* Elemento vacío para el fondo */
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.4); /* Fondo blanco con mayor opacidad */
-    z-index: -1; /* Colocamos el fondo detrás del texto */
+    background: rgba(255, 255, 255, 0.4);
+    z-index: -1;
 }
 
 /* Estilos para el texto */
 .title {
-    font-size: clamp(1.8rem, 3vw, 2.5rem); /* Ajuste dinámico para que el texto no sea demasiado grande */
-    color: #33d1cc; /* Azul celeste para el título */
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #33d1cc;
     margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil para mejorar la legibilidad */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem); /* Ajuste dinámico */
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
     font-weight: bold;
     margin-bottom: 15px;
-    color: black; /* Texto negro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .description {
-    font-size: clamp(0.8rem, 1.8vw, 1.1rem); /* Ajuste dinámico */
+    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
     margin-bottom: 20px;
-    line-height: 1.4; /* Ajuste de la altura de línea */
-    color: black; /* Texto negro */
-    max-width: 90%; /* Limita el ancho máximo del texto */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    line-height: 1.4;
+    color: black;
+    max-width: 90%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .blog {
-    font-size: clamp(0.9rem, 2vw, 1.2rem); /* Ajuste dinámico */
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: bold;
     margin-top: 20px;
-    color: black; /* Texto negro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividad para pantallas pequeñas */
+/* Responsividad para pantallas pequeñas (móviles) */
 @media screen and (max-width: 768px) {
     .item-container {
-        flex-direction: column; /* Apila imagen y contenido */
-        height: auto; /* Ajuste automático de la altura */
-        background-position: top; /* Asegura que la imagen no se recorte por el fondo */
+        flex-direction: column;
+        height: auto; /* Asegura que el contenedor se ajuste a su contenido */
+        background-position: top;
     }
 
     .text-container {
-        max-width: 100%; /* Usa todo el ancho */
-        padding: 20px; /* Ajusta el padding */
-        text-align: left; /* Alinea el texto a la izquierda */
-        height: auto; /* Ajusta la altura del contenedor */
+        width: 100%; /* Usa todo el ancho disponible */
+        padding: 20px;
+        text-align: left;
+        height: auto;
     }
 
     .title {
-        font-size: clamp(1.5rem, 3vw, 2.5rem); /* Ajuste adicional para móviles */
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
     }
 
     .subtitle {
@@ -116,18 +116,15 @@
     }
 
     .description {
-        font-size: clamp(0.8rem, 2vw, 1rem); /* Texto más pequeño */
+        font-size: clamp(0.8rem, 2vw, 1rem);
     }
 
     .blog {
         font-size: clamp(0.9rem, 2vw, 1.2rem);
     }
-
-    .modelo-btn {
-        width: 100%; /* Botón más ancho */
-    }
 }
 
+/* Responsividad para pantallas muy pequeñas (smartphones más pequeños) */
 @media screen and (max-width: 480px) {
     .text-container {
         padding: 10px;
@@ -142,11 +139,12 @@
     }
 
     .description {
-        font-size: clamp(0.7rem, 1.5vw, 0.9rem); /* Más pequeño para dispositivos pequeños */
-        line-height: 1.3; /* Reduce la altura de línea */
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+        line-height: 1.3;
     }
 
     .blog {
         font-size: clamp(0.8rem, 2vw, 1rem);
     }
 }
+
