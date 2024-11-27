@@ -5,6 +5,7 @@ import Modelo from "./components/Modelo";
 import Servicios from "./components/Servicios";
 import Galeria from "./components/Galeria";
 import Footer from "./components/Footer";
+import Contacto from "./components/Contacto"; // Nuevo componente Contacto
 
 function App() {
   const contactoRef = useRef(null);  // Referencia para la sección de contacto
@@ -41,11 +42,12 @@ function App() {
         <Servicios />
       </div>
 
-      <div ref={galeriaRef}> {/* Aquí se encuentra la referencia para la galería */}
+      <div ref={galeriaRef}>
         <Galeria />
       </div>
 
-      <div ref={contactoRef}>
+      <div ref={contactoRef}> {/* Contacto integrado aquí */}
+        <Contacto />
         <Footer />
       </div>
     </div>
