@@ -1,139 +1,148 @@
-/* Contenedor principal */
+/* Contenedor principal del Modelo */
 .modelo-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    position: relative;
-    margin-top: 0; /* Sin separación con el navbar */
-    padding: 0;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 100px; /* Aumento el margen superior para asegurar más separación */
+  padding: 0;
+}
+
+.modelo-img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh; /* Limita la altura máxima */
+  object-fit: cover;
+}
+
+.modelo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  padding-left: 30px;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  background-color: transparent;
+}
+
+.texto-principal {
+  font-size: clamp(2rem, 5vw, 4rem); /* Usamos clamp para hacerlo responsivo */
+  font-weight: bold;
+  color: #33d1cc;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.texto-secundario {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem); /* También hacemos responsivo este texto */
+  font-weight: 700;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.texto-parrafo {
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Ajustamos el tamaño para ser más pequeño en pantallas pequeñas */
+  margin-top: 20px;
+  max-width: 600px;
+  width: 100%; /* Asegura que el párrafo ocupe el 100% del ancho disponible */
+  line-height: 1.5;
+}
+
+.modelo-btn {
+  margin-top: 30px;
+  padding: clamp(10px, 2vw, 20px) clamp(20px, 4vw, 40px); /* Ajustamos el padding usando clamp */
+  background-color: #33d1cc;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modelo-btn:hover {
+  background-color: #29b4b0;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  /* Aseguramos que se sigan ajustando los elementos */
   
-  /* Imagen */
+  .modelo-container {
+    flex-direction: column; /* Los elementos se apilan en columna */
+    height: auto; /* Altura ajustada automáticamente */
+    margin-top: 50px; /* Reducimos el margen superior para mejor ajuste en pantallas pequeñas */
+  }
+
   .modelo-img {
-    width: 100%;
-    height: auto;
-    max-height: 80vh; /* Limita la altura máxima */
-    object-fit: cover; /* Mantiene proporciones */
+    max-height: 70vh; /* La imagen se ajusta para pantallas pequeñas */
   }
-  
-  /* Contenedor del texto */
+
   .modelo-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: #fff;
-    padding-left: 30px;
-    position: absolute;
-    left: 0;
-    width: 50%;
-    background-color: transparent;
+    width: 100%; /* Se asegura de ocupar todo el ancho */
+    padding-left: 15px; /* Ajustamos el padding para que se vea mejor */
   }
-  
-  /* Título principal */
+
   .texto-principal {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #33d1cc;
-    margin: 0;
-    text-transform: uppercase;
-    line-height: 1.2;
+    font-size: clamp(2rem, 8vw, 3.5rem); /* Se hace más pequeño pero sigue siendo legible */
   }
-  
-  /* Subtítulo */
+
   .texto-secundario {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin-top: 10px;
+    font-size: clamp(1.5rem, 6vw, 2rem); /* Ajustamos también el tamaño */
   }
-  
-  /* Descripción */
+
   .texto-parrafo {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    max-width: 600px;
-    line-height: 1.5;
+    font-size: clamp(1.2rem, 5vw, 1.4rem); /* Ajustamos el tamaño del párrafo para pantallas más pequeñas */
+    margin-top: 15px;
+    max-width: none; /* El párrafo ocupa todo el ancho disponible */
+    width: 100%; /* Asegura que el párrafo ocupe el 100% del ancho */
   }
-  
-  /* Botón */
+
   .modelo-btn {
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #33d1cc;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: clamp(1rem, 4vw, 1.2rem); /* Botón más grande en pantallas pequeñas */
+    padding: clamp(12px, 3vw, 18px) clamp(24px, 5vw, 36px); /* Ajustamos el padding para pantallas pequeñas */
   }
-  
-  .modelo-btn:hover {
-    background-color: #29b4b0;
+}
+
+/* Media Queries para pantallas muy pequeñas (smartphones menores a 480px) */
+@media screen and (max-width: 480px) {
+  .modelo-container {
+    height: auto;
   }
-  
-  /* Media Queries para pantallas pequeñas */
-  
-  /* Para tablets y pantallas de 768px o menos */
-  @media screen and (max-width: 768px) {
-    .modelo-container {
-      flex-direction: column; /* Apila imagen y contenido */
-      height: auto;
-    }
-  
-    .modelo-img {
-      max-height: 50vh; /* Imagen más pequeña en dispositivos móviles */
-      object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
-    }
-  
-    .modelo-content {
-      align-items: center; /* Centra el contenido */
-      padding: 20px;
-      width: 100%; /* Ocupa todo el ancho */
-      text-align: center; /* Centra el texto */
-      position: relative; /* Evita solapamientos */
-    }
-  
-    .texto-principal {
-      font-size: 2.5rem; /* Texto más pequeño */
-    }
-  
-    .texto-secundario {
-      font-size: 1.8rem;
-    }
-  
-    .modelo-btn {
-      width: 100%; /* Botón más ancho */
-    }
+
+  .modelo-img {
+    max-height: 60vh; /* Imagen más pequeña en dispositivos más pequeños */
   }
-  
-  /* Para pantallas más pequeñas (móviles) de 480px o menos */
-  @media screen and (max-width: 480px) {
-    .modelo-img {
-      max-height: 40vh; /* Ajuste adicional para pantallas más pequeñas */
-      object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
-    }
-  
-    .texto-principal {
-      font-size: 2rem;
-    }
-  
-    .texto-secundario {
-      font-size: 1.5rem;
-    }
-  
-    .texto-parrafo {
-      font-size: 1rem;
-    }
-  
-    .modelo-btn {
-      padding: 12px;
-      font-size: 1rem;
-    }
+
+  .modelo-content {
+    width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+    padding-left: 10px; /* Ajusta el padding */
   }
-  
-  
+
+  .texto-principal {
+    font-size: clamp(1.5rem, 10vw, 2.5rem); /* Ajuste del tamaño de la fuente para pantallas muy pequeñas */
+  }
+
+  .texto-secundario {
+    font-size: clamp(1.2rem, 6vw, 2rem); /* Ajustamos el tamaño del texto */
+  }
+
+  .texto-parrafo {
+    font-size: clamp(1.2rem, 7vw, 1.5rem); /* Aseguramos que el párrafo sea legible y ocupe todo el ancho */
+    margin-top: 10px;
+    max-width: none; /* El párrafo ocupa todo el ancho disponible */
+    width: 100%; /* Asegura que el párrafo ocupe el 100% del ancho */
+  }
+
+  .modelo-btn {
+    font-size: clamp(1rem, 4vw, 1.2rem); /* Aseguramos que el botón se ajuste también */
+    padding: clamp(10px, 3vw, 15px) clamp(20px, 4vw, 30px); /* Ajuste final del padding */
+  }
+}
